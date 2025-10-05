@@ -1,0 +1,82 @@
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(17, 34, 64, 0.5);
+  border-radius: 16px;
+  box-shadow: var(--glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(88, 166, 255, 0.25);
+}
+
+button,
+.btn {
+  /* cursor: pointer;
+  position: relative;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+
+  transition: color 0.3s ease; */
+
+  position: relative;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem; /* space between icon and text */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: var(--accent);
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--glow);
+  transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+.container {
+  padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
+
+
+

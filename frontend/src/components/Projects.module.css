@@ -1,0 +1,83 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.techIcons {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.icon {
+  font-size: 1.4rem;
+  color: var(--muted);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon[data-tech="FaJava"] { color: #f89820; }
+.icon[data-tech="SiSpringboot"] { color: #6db33f; }
+.icon[data-tech="SiHibernate"] { color: #bca22b; }
+.icon[data-tech="FaDatabase"] { color: #00758f; }
+.icon[data-tech="FaGitAlt"] { color: #f34f29; }
+.icon[data-tech="FaReact"] { color: #61DBFB; }     
+.icon[data-tech="FaJs"] { color: #F7DF1E; }   
+.icon[data-tech="FaCss3"] { color: #2965F1; }      
+.icon[data-tech="TCPNetwork"] { color: #2ECC71; }
+
+
+.icon:hover {
+  transform: translateY(-3px);
+  color: var(--accent);
+  filter: drop-shadow(0 0 6px rgba(88, 166, 255, 0.4));
+}
+
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-left: 3px solid var(--accent);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.desc {
+  color: var(--muted);
+  margin: 0.5rem 0;
+}
+.stack {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.actions {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.actions a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Responsive Styles */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}

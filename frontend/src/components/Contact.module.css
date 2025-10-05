@@ -1,0 +1,24 @@
+.wrap{max-width:700px}
+.form{display:flex;flex-direction:column;gap:0.6rem}
+.form label{color:var(--muted);font-size:0.85rem}
+.form input,.form textarea{
+  padding:0.6rem 0.75rem;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)
+}
+.form textarea{min-height:120px}
+.form button{align-self:flex-start;padding:0.6rem 1rem;border-radius:8px;border:none;background:var(--accent);color:var(--bg);font-weight:700}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .form {
+    width: 100%;
+  }
+
+  .form input, .form textarea {
+    font-size: 0.95rem;
+  }
+
+  .form button {
+    align-self: center;
+    width: 100%;
+  }
+}

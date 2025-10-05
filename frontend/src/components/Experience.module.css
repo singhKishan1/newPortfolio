@@ -1,0 +1,22 @@
+.timeline{display:flex;flex-direction:column;gap:1rem}
+.item{display:flex;gap:1rem}
+.year{min-width:140px;color:var(--muted)}
+.body{background:var(--card);padding:1rem;border-radius:8px}
+.body h4{margin:0 0 0.5rem 0;color:var(--accent)}
+.body ul{margin:0;padding-left:1rem;color:var(--muted)}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .item {
+    flex-direction: column;
+  }
+
+  .year {
+    min-width: auto;
+    font-weight: bold;
+  }
+
+  .body {
+    width: 100%;
+  }
+}

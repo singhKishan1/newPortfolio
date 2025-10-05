@@ -1,0 +1,75 @@
+.social {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.social h3 {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Base icon styles + fade-in effect */
+.icons a {
+  color: var(--muted);
+  font-size: 1.8rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+  transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
+}
+
+/* Staggered appearance */
+.icons a:nth-child(1) {
+  animation-delay: 0.2s;
+  color: #0A66C2;
+}
+.icons a:nth-child(2) {
+  animation-delay: 0.4s;
+  color: #333;
+}
+.icons a:nth-child(3) {
+  animation-delay: 0.6s;
+  color: #D44638;
+}
+
+/* Hover float (separate animation, doesn’t override fadeUp) */
+.icons a:hover {
+  color: var(--accent);
+  transform: translateY(-6px) scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(88, 166, 255, 0.5));
+  animation-play-state: paused; /* ensures fadeUp stays finished */
+}
+
+/* Continuous gentle float after fade-in completes (optional subtle motion) */
+.icons a.fade-done {
+  animation: floatIcon 3s ease-in-out infinite alternate;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-6px);
+  }
+}
+
