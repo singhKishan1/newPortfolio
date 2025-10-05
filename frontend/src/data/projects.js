@@ -6,8 +6,8 @@ export const projects = [
     title: 'Git Tree Object Handler',
     description: 'Java-based implementation for reading and writing git tree objects. Demonstrates low-level file I/O and hashing.',
     tech: ["FaJava",  "FaGitAlt"],
-    githubLink: 'https://github.com/yourusername/git-tree-handler',
-    liveLink: ''
+    githubLink: 'https://github.com/singhKishan1/CodeCrafterHTTP/tree/master',
+    liveLink: '#'
   },
 
   {
@@ -15,8 +15,8 @@ export const projects = [
     title: 'Spring Boot Portfolio API',
     description: 'A tiny Spring Boot REST API to serve portfolio projects and contact form submissions.',
     tech: ["FaJava","SiHibernate", "SiSpringboot", "FaDatabase"],
-    githubLink: 'https://github.com/yourusername/portfolio-api',
-    liveLink: ''
+    githubLink: 'https://github.com/singhKishan1/newPortfolio',
+    liveLink: '#'
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const projects = [
     description: 'A collection of algorithm visualizers and example solutions focused on arrays and strings.',
     tech: ["FaReact", "Vite", "FaCss3", "FaJs"],
     githubLink: 'https://github.com/yourusername/dsa-playground',
-    liveLink: ''
+    liveLink: '#'
   },
 
   {

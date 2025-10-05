@@ -41,10 +41,29 @@ export default function Projects() {
             ))}
           </div>
 
-          <a href={p.githubLink} target="_blank" rel="noreferrer" className="btn">
-            <FaGithub style={{ marginRight: "6px" }} />
-            View Code
-          </a>
+          <div className={styles.liveLink}>
+            <a
+              href={p.githubLink}
+              target="_blank"
+              rel="noreferrer"
+              className="btn"
+            >
+              <FaGithub style={{ marginRight: "6px" }} />
+              View Code
+            </a>
+
+            {p.liveLink && (
+              <a
+                href={p.liveLink}
+                target="_blank"
+                rel="noreferrer"
+                className="btn"
+              >
+                <FaExternalLinkAlt style={{ marginRight: "6px" }} />
+                Live Demo
+              </a>
+            )}
+          </div>
         </article>
       ))}
     </div>
