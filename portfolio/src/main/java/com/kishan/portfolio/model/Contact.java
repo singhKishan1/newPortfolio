@@ -23,6 +23,7 @@ public class Contact {
 
     private String name;
     private String email;
+    private String subject;
     private String message;
     private LocalDateTime sentAt = LocalDateTime.now();
 }

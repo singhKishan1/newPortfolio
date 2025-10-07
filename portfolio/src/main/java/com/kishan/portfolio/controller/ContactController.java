@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kishan.portfolio.model.Contact;
 import com.kishan.portfolio.repository.ContactRepository;
+import com.kishan.portfolio.service.EmailService;
 
 @RestController
 @RequestMapping("/api/contact")
@@ -17,13 +18,16 @@ public class ContactController {
     @Autowired
     private ContactRepository contactRepository;
 
+    @Autowired
+    private EmailService emailService;
+
     @PostMapping("/sendMessage")
     public String sendMessage(@RequestBody Contact contact) {
         try {
             contactRepository.save(contact);
+            return emailService.sendEmail(contact.getEmail(), contact.getSubject(), contact.getMessage());
         } catch (Exception e) {
             return "Error sending message: " + e.getMessage();
         }
-        return "Message sent successfully!";
     }
 }

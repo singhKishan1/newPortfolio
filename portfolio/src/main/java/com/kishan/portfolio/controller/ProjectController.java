@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +20,17 @@ public class ProjectController {
     private ProjectService projectService;
 
     @GetMapping("/all")
-    public List<Project> getAllProjects(){
+    public List<Project> getAllProjects() {
         return projectService.getAllProjects();
+    }
+
+    @PostMapping("/add")
+    public String addProject(Project project) {
+        try {
+            projectService.addProject(project);
+        } catch (Exception e) {
+            return "Error adding project: " + e.getMessage();
+        }
+        return "Project added successfully";
     }
 }
