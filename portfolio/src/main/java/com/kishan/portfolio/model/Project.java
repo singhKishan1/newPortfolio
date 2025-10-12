@@ -1,8 +1,10 @@
 package com.kishan.portfolio.model;
 
+import java.util.List;
+
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,12 +18,14 @@ import lombok.Setter;
 @Entity
 public class Project {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
-    private String githubUrl;
-    private String liveDemoUrl;
+    private String githubLink;
+    private String liveLink;
     private String imageUrl;
-    private String techStack;
+
+    @ElementCollection
+    @CollectionTable(name = "project_tech")
+    private List<String> tech;
 }

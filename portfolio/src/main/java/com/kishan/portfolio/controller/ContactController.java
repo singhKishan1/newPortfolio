@@ -13,7 +13,7 @@ import com.kishan.portfolio.service.EmailService;
 
 @RestController
 @RequestMapping("/api/contact")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:5173")
 public class ContactController {
     @Autowired
     private ContactRepository contactRepository;
@@ -25,7 +25,7 @@ public class ContactController {
     public String sendMessage(@RequestBody Contact contact) {
         try {
             contactRepository.save(contact);
-            return emailService.sendEmail(contact.getEmail(), contact.getSubject(), contact.getMessage());
+            return emailService.sendEmail(contact.getEmail(), "", contact.getMessage());
         } catch (Exception e) {
             return "Error sending message: " + e.getMessage();
         }

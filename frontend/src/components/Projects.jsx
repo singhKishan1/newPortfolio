@@ -1,5 +1,7 @@
 import styles from "./Projects.module.css";
-import { projects } from "../data/projects";
+// import { projects } from "../data/projects";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   FaJava,
   FaDatabase,
@@ -14,6 +16,29 @@ import {
 import { SiSpringboot, SiHibernate } from "react-icons/si";
 
 export default function Projects() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "/api/projects/all"
+        );
+        console.log(response.data);
+        setData(response.data);
+        console.log("projects data:" + projects);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []); // The empty dependency array ensures this runs only once on mount
+
   const iconMap = {
     FaJava: <FaJava />,
     SiSpringboot: <SiSpringboot />,
@@ -28,7 +53,7 @@ export default function Projects() {
 
   return (
     <div className={styles.grid}>
-      {projects.map((p) => (
+      {data != null && data.map((p) => (
         <article key={p.id} className={styles.card}>
           <h3>{p.title}</h3>
           <p>{p.description}</p>
