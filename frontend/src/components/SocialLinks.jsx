@@ -17,7 +17,7 @@ export default function SocialLinks() {
           <FaLinkedin />
         </a>
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/singhKishan1"
           target="_blank"
           rel="noreferrer"
           aria-label="GitHub"
