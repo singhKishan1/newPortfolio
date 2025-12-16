@@ -34,5 +34,14 @@ export const projects = [
     tech: ["FaJava", "TCPNetwork"],
     githubLink: 'https://github.com/singhKishan1/CodeCrafterHTTP/tree/master',
     liveLink: ''
+  },
+
+  {
+    id: 5,
+    title: 'JarPatch',
+    description: 'A tool for patching JAR files with new content.',
+    tech: ["FaJava", "FaFileArchive"],
+    githubLink: 'https://github.com/singhKishan1/JarPatch',
+    liveLink: ''
   }
 ]

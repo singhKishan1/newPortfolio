@@ -1,5 +1,5 @@
 import styles from "./Projects.module.css";
-// import { projects } from "../data/projects";
+import { projects } from "../data/projects";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
@@ -12,6 +12,7 @@ import {
   FaJs,
   FaGithub,
   FaExternalLinkAlt,
+  FaFileArchive,
 } from "react-icons/fa";
 import { SiSpringboot, SiHibernate } from "react-icons/si";
 
@@ -24,7 +25,7 @@ export default function Projects() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "/api/projects/all"
+          " http://localhost:8080:/api/projects/all"
         );
         console.log(response.data);
         setData(response.data);
@@ -49,11 +50,12 @@ export default function Projects() {
     FaReact: <FaReact />,
     FaCss3: <FaCss3 />,
     FaJs: <FaJs />,
+    FaFileArchive: <FaFileArchive />,
   };
 
   return (
     <div className={styles.grid}>
-      {data != null && data.map((p) => (
+      {projects != null && projects.map((p) => (
         <article key={p.id} className={styles.card}>
           <h3>{p.title}</h3>
           <p>{p.description}</p>
